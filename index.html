@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Symfonia - luksusowe używane samochody z klasą!</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="first-screen">
+      <section>
+        <div class="hero-image">
+          <picture>
+            <source
+              srcset="./assets/top-mobile-x1.jpg"
+              media="(max-width: 420px)"
+            />
+            <source
+              srcset="./assets/top-mobile-x2.jpg"
+              media="(max-width: 840px)"
+            />
+            <source srcset="./assets/top.jpg" media="(min-width: 840px)" />
+            <img
+              class="top"
+              src="./assets/top-mobile-x1.jpg"
+              alt="Zjęcie samochodu na czarnym tle"
+            />
+          </picture>
+        </div>
+        <div class="hero-text">
+          <h3>Poczuj harmonię jazdy</h3>
+          <h1>Wybierz auto swoich marzeń.</h1>
+          <p>
+            W naszej ofercie znajdują się używane auta najwyższej klasy. Wybierz
+            idealny model dla Ciebie i zobacz jakie to proste.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h1>Auta premium w naszej ofercie</h1>
+        </div>
+        <div class="car-container" id="cars-container">
+          <div class="container-item car1">
+            <img
+              class="car-container-image"
+              src="./assets/mercedes-e.jpg"
+              alt="Zjęcie Mercedes Benz Klasa E 2018"
+            />
+            <h2 name="brand">Mercedes Benz</h2>
+            <h3 name="car-class">Klasa E</h3>
+            <h2 name="car-price">167000 zł</h2>
+            <h4>Rok produkcji</h4>
+            <h3 name="car-year">2018</h3>
+            <h4>Przebieg</h4>
+            <h3>133 237 km</h3>
+            <h4>Moc</h4>
+            <h3>194 KM</h3>
+            <button class="button-buy" id="car1-button">KUP AUTO</button>
+          </div>
+          <div class="container-item car2">
+            <img
+              class="car-container-image"
+              src="./assets/chevrolet.jpg"
+              alt="Zjęcie Chevrolet Corvette C6 2012"
+            />
+            <h2 name="brand">Chevrolet</h2>
+            <h3 name="car-class">Corvette C6</h3>
+            <h2 name="car-price">310000 zł</h2>
+            <h4>Rok produkcji</h4>
+            <h3 name="car-year">2012</h3>
+            <h4>Przebieg</h4>
+            <h3>11 000 km</h3>
+            <h4>Moc</h4>
+            <h3>606 KM</h3>
+            <button class="button-buy">KUP AUTO</button>
+          </div>
+          <div class="container-item car3">
+            <img
+              class="car-container-image"
+              src="./assets/mercedes-a.jpg"
+              alt="Zjęcie Mercedes Benz Klasa A 2018"
+            />
+            <h2 name="brand">Mercedes Benz</h2>
+            <h3 name="car-class">Klasa A</h3>
+            <h2 name="car-price">85000 zł</h2>
+            <h4>Rok produkcji</h4>
+            <h3 name="car-year">2018</h3>
+            <h4>Przebieg</h4>
+            <h3>150 000 km</h3>
+            <h4>Moc</h4>
+            <h3>116 KM</h3>
+            <button class="button-buy">KUP AUTO</button>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="form-buy">
+      <div class="form-container">
+        <section class="form" id="form-order">
+          <h1>Formularz zamówienia</h1>
+          <h4>Forma finansowania</h4>
+          <input type="radio" name="financing" value="Leasing" id="leasing" required/>Leasing</br>
+          <input type="radio" name="financing" value="Gotówka" id="cash" required/>Gotówka</br>
+          <h4>Dane nabywcy</h4>
+          <p id="invalid-financing"></p>
+          <span>
+            <label for="name-surname"><h3>Imię i nazwisko</h3></label></br>
+            <input type="text" id="name" name="name-surname" placeholder="np. Jan Kowalski" required>
+            <p id="invalid-name"></p>
+          </span>
+          <span>
+            <label for="pickup-place"><h3>Miejsce odbioru</h3></label></br>
+            <input type="text" id="pickup" name="pickup-place" placeholder="np. Poznań" required>
+            <p id="invalid-pickup"></p>
+          </span>
+          <span>
+            <label for="data"><h3>Data odbioru</h3></label></br>
+            <input type="date" id="data" name="data" placeholder="np. 20/11/2023" required>
+            <p id="invalid-data"></p>
+          </span>
+          <h1>Dodaj akcesoria</h1>
+          <table id="accessories">
+            <tr>
+              <th><h3>Opony zimowe</h3></th>
+              <th><h3>5500 zł</h3></th>
+              <th><button class="button-add">DODAJ</button></th>
+            </tr>
+            <tr>
+              <th><h3>Dodatkowy rok gwarancji</h3></th>
+              <th><h3>6000 zł</h3></th>
+              <th><button class="button-add">DODAJ</button></th>
+            </tr>
+            <tr>
+              <th><h3>System audio premium</h3></th>
+              <th><h3>9000 zł</h3></th>
+              <th><button class="button-add">DODAJ</button></th>
+            </tr>
+          </table>
+          <h1>Wybrane akcesoria</h1>
+          <table id="chosen-accessories">
+          </table>
+          <button id="button-back">WRACAM DO WYBORU AUTA</button>
+        </section>
+        <section id="form-summary">
+          <h1>Podsumowanie</h1>
+          <h4>Wybrane auto</h4>
+          <h3 id="chosen-car"></h3>
+          <h4>Cena całkowika</h4>
+          <h3 id="total-price"></h3>
+          <button class="button-buy" id="button-car">KUPUJĘ AUTO</button>
+        </section>
+      </div>
+    </section>
+    <section id="thank-you">
+      <div class="thank-you-container">
+        <h1 id="thank-you-car"></h1>
+        <div id="thank-you-image"></div>
+        <h4>Wybrana forma finansowania</h4>
+        <h3 id="financing-selected"></h3>
+        <h4>Data dostawy auta</h4>
+        <h3 id="date-selected"></h3>
+        <h4>Całkowita cena auta wraz z wybranymi akcesoriami</h4>
+        <h3 id="price-selected"></h3>
+      </div>
+    </section>
+  </body>
+</html>
