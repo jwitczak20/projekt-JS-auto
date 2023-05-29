@@ -11,20 +11,23 @@ const $storedPickup = localStorage.getItem("pickupInput");
 const $storedName = localStorage.getItem("nameInput");
 
 function addAccessory() {
-  let $accessoryName =
+  const $accessoryName =
     this.parentNode.parentNode.getElementsByTagName("h3")[0].innerHTML;
-  let $accessoryPrice =
+  const $accessoryPrice =
     this.parentNode.parentNode.getElementsByTagName("h3")[1].innerHTML;
-  let $newRow = document.getElementById("chosen-accessories").insertRow();
+  const $chosenAccessory = document
+    .getElementById("chosen-accessories")
+    .insertRow();
 
-  let cell1 = $newRow.insertCell(0);
-  let cell2 = $newRow.insertCell(1);
-  let cell3 = $newRow.insertCell(2);
-  cell1.innerHTML = $accessoryName;
-  cell2.innerHTML = $accessoryPrice;
-  cell3.innerHTML = '<button class="button-remove">USUŃ</button>';
+  const chosenAccessoryName = $chosenAccessory.insertCell(0);
+  const chosenAccessoryPrice = $chosenAccessory.insertCell(1);
+  const chosenAccessoryRemoveButton = $chosenAccessory.insertCell(2);
+  chosenAccessoryName.innerHTML = $accessoryName;
+  chosenAccessoryPrice.innerHTML = $accessoryPrice;
+  chosenAccessoryRemoveButton.innerHTML =
+    '<button class="button-remove">USUŃ</button>';
 
-  cell3
+  chosenAccessoryRemoveButton
     .getElementsByTagName("button")[0]
     .addEventListener("click", removeAccessory);
 }
@@ -33,8 +36,8 @@ function removeAccessory() {
   this.parentNode.parentNode.remove();
 }
 
-let $addButtonList = document.getElementsByClassName("button-add");
-for (var i = 0; i < $addButtonList.length; i++) {
+const $addButtonList = document.getElementsByClassName("button-add");
+for (let i = 0; i < $addButtonList.length; i++) {
   $addButtonList[i].addEventListener("click", addAccessory);
 }
 
@@ -43,7 +46,7 @@ const $financingSelected = document.getElementById("financing-selected");
 const $leasingValue = document.getElementById("leasing");
 const $cashValue = document.getElementById("cash");
 
-let findSelected = () => {
+const findSelected = () => {
   if ($leasingValue.checked) {
     $financingSelected.textContent = $leasingValue.value;
   } else if ($cashValue.checked) {
